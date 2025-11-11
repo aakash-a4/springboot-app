@@ -1,0 +1,13 @@
+name: Auto Issue Triage
+on:
+  issues:
+    types: [opened]
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Label new issues
+        uses: actions-ecosystem/action-add-labels@v1
+        with:
+          labels: "triage"
